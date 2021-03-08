@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/addcity}" th:object="${city}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <label for="countryCode">Email</label>
+    <input type="text" th:field="*{countryCode}" id="countryCode" placeholder="Email">
+    <span th:if="${#fields.hasErrors('countryCode')}" th:errors="*{countryCode}"></span>
+    <input type="submit" value="Add City">
+</form>
+</body>
+</html>
